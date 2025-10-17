@@ -1,15 +1,14 @@
-
 let universidades = [];
 let paisesDisponibles = ["chile", "argentina", "colombia", "mexico", "brazil", "canada"]; 
 
+
 const JSON_FILES = {
-    
-    "chile": "./json/chile.json",
-    "argentina": "./json/argentina.json",
-    "colombia": "./json/colombia.json",
-    "mexico": "./json/mexico.json",
-    "brazil": "./json/brazil.json",
-    "canada": "./json/canada.json", 
+    "chile": "./js/json/chile.json",
+    "argentina": "./js/json/argentina.json",
+    "colombia": "./js/json/colombia.json",
+    "mexico": "./js/json/mexico.json",
+    "brazil": "./js/json/brazil.json",
+    "canada": "./js/json/canada.json"
 };
 
 // Conexión para obtener la lista de Universidades del archivo local
@@ -22,7 +21,6 @@ async function conexionLista(pais) {
     }
     
     try {
-       
         const res = await fetch(filePath); 
         
         if (!res.ok) {
@@ -53,7 +51,6 @@ async function FiltroConexion(pais) {
     if (listaContenedor) {
         listaContenedor.innerHTML = "Cargando universidades...";
     }
-    
     
     universidades = await conexionLista(pais);
    
